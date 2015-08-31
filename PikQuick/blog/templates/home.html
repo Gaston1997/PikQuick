@@ -1,3 +1,30 @@
 {% block post %}
-<h3>Posts</h3>
+<div class="container">
+    <div class="row">
+        <div class="col s10 offset-s1" id="postscont">
+
+            {% for post in posts %}
+            <div class="post">
+                <hr>
+                <a href="{% url 'PyWEB:vermipost' post.id %}">
+                    <h2 style="color:#0d47a1;">
+                        {{post.titulo}}
+                    </h2>
+                    <h3 style="color:#0d47a1;">
+                        {{post.resumen}}
+                    </h3>
+                </a>
+                <p style="color:#1976d2;">Posteado por {{post.autor}}</p>
+            </div>
+            {% endfor %}
+
+            <!-- Pager -->
+            <!--<ul class="pager">
+<li class="next">
+<a href="#">Post anteriores &rarr;</a>
+</li>
+</ul>-->
+        </div>
+    </div>
+</div>
 {% endblock %}
