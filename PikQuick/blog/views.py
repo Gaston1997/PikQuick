@@ -23,3 +23,23 @@ def ver_post(request,id_post):
                               {'post':mi_post,
                                'mensajes':mensajes},
                               context)
+
+def nuevapublic(request):
+    context = RequestContext(request)
+    return render_to_response('nuevapublic.html',
+                              context)
+
+def crear_public(request):
+    context = RequestContext(request)
+    if request.method=='POST':
+        pub=Entrada()
+        pub.titulo=request.POST['titulo']
+        pub.autor=request.POST['autor']
+        pub.fecha=request.POST['fecha']
+        #pub.descripcion=request.POST['descripcion']
+        #pub.archivo=request.FILES['archivo']
+        pub.img=request.FILES['img']
+        pub.save()
+
+    return render_to_response('nuevapublic.html',
+                              context)
