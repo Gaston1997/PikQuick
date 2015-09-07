@@ -20,8 +20,7 @@ def ver_post(request,id_post):
     mensajes = Mensajes.objects.filter(published_in = mi_post, published = True)
 
     return render_to_response('post.html',
-                              {'post':mi_post,
-                               'mensajes':mensajes},
+                              {'post':mi_post,},
                               context)
 
 def nuevapublic(request):
@@ -36,9 +35,8 @@ def crear_public(request):
         pub.titulo=request.POST['titulo']
         pub.autor=request.POST['autor']
         pub.fecha=request.POST['fecha']
-        #pub.descripcion=request.POST['descripcion']
-        #pub.archivo=request.FILES['archivo']
-        pub.img=request.FILES['img']
+        pub.img1=request.FILES['img1']
+        pub.img2=request.FILES['img2']
         pub.save()
 
     return render_to_response('nuevapublic.html',
