@@ -12,8 +12,8 @@ class Entrada(models.Model):
 
     titulo = models.CharField(u'Título', max_length = 100)
     fecha = models.DateTimeField(u'Fecha del Post',auto_now_add=True)
-    img1 = models.FileField(u'Imagen de portada',upload_to = 'documents', default='null')
-    img2 = models.FileField(u'Imagen de portada',upload_to = 'documents', default='null')
+    img1 = models.FileField(u'Imagen de portada',upload_to = 'img_public', default='null')
+    img2 = models.FileField(u'Imagen de portada',upload_to = 'img_public', default='null')
     published = models.BooleanField(u'Publicado?', default=True)
     #autor = models.ForeignKey(User)
     #categoria = models.ManyToManyField('Categoria')

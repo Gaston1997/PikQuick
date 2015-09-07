@@ -15,12 +15,18 @@
 
     {% block titulo %}
     {% endblock %}
+
     {% block post %}
     {% endblock %}
+
     {% block content %}
     {% endblock %}
 
     <body>
         <li><a href="{% url 'PyWEB:nuevapublic' %}">+</a></li>
     </body>
+
+    {% block scripts %}
+    {% endblock %}
+
 </html>
